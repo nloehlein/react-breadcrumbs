@@ -1,15 +1,13 @@
 // Import External Dependencies
 import React from 'react'
 import PropTypes from 'prop-types'
-
 // TODO: Use imitation and allow it to be passed as a prop
-import { NavLink } from 'react-router-dom'
-
+import {NavLink} from 'react-router-dom'
 // Import Utilities
 import Store from './store'
 
 // Specify BEM block name
-const block = 'breadcrumbs'
+const block = 'breadcrumbs';
 
 // Create and export the component
 export default class Breadcrumbs extends React.Component {
@@ -29,7 +27,7 @@ export default class Breadcrumbs extends React.Component {
                 PropTypes.node
             )
         ])
-    }
+    };
 
     static defaultProps = {
         className: '',
@@ -40,14 +38,14 @@ export default class Breadcrumbs extends React.Component {
                 { props.children }
             </nav>
         )
-    }
+    };
 
-    _unsubscribe = null
+  _unsubscribe = null;
 
     render() {
         let { className, hidden, wrapper: Wrapper } = this.props,
             hiddenMod = hidden ? `${block}--hidden` : '',
-            crumbs = Store.getState()
+          crumbs = Store.getState();
 
         return (
             <div className={ className }>
@@ -59,10 +57,10 @@ export default class Breadcrumbs extends React.Component {
                             }).map((crumb, i) => (
                                 <span key={ crumb.id } className={ `${block}__section` }>
                                     <NavLink
-                                        exact
-                                        className={ `${block}__crumb` }
-                                        activeClassName={ `${block}__crumb--active` }
-                                        to={{ 
+                                      exact
+                                      className={`${block}__crumb ${crumb.className}`}
+                                      activeClassName={ `${block}__crumb--active` }
+                                      to={{
                                             pathname: crumb.pathname,
                                             search: crumb.search,
                                             state: crumb.state

@@ -1,5 +1,5 @@
 // Import External Dependencies
-import { createStore } from 'redux'
+import {createStore} from 'redux'
 
 // Create the reducer
 let crumbs = (state = [], action) => {
@@ -8,26 +8,26 @@ let crumbs = (state = [], action) => {
             return [
                 ...state,
                 action.payload
-            ]
+            ];
 
         case 'UPDATE_CRUMB':
             return state.map(crumb => {
                 return crumb.id === action.payload.id ? action.payload : crumb
-            })
+            });
 
         case 'REMOVE_CRUMB':
             return state.filter(crumb => {
                 return crumb.id !== action.payload.id
-            })
+            });
 
         default: 
             return state
     }
-}
+};
 
 // Create the store
-let store = createStore(crumbs)
+let store = createStore(crumbs);
 
 // Export store and Dispatch method
 export default store
-export var Dispatch = store.dispatch
+export var Dispatch = store.dispatch;

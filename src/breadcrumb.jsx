@@ -3,9 +3,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import UUID from 'uuid'
 import IsEqual from 'lodash.isequal'
-
 // Import Utilities
-import { Dispatch } from './store'
+import {Dispatch} from './store'
 
 // Create and export the component
 export default class Breadcrumb extends React.Component {
@@ -13,29 +12,29 @@ export default class Breadcrumb extends React.Component {
 		data: PropTypes.object.isRequired,
 		hidden: PropTypes.bool,
 		children: PropTypes.element
-	}
+  };
 
 	static defaultProps = {
 		hidden: false,
 		children: null
-	}
+  };
 
 	state = {
 		id: UUID.v4()
-	}
+  };
 
 	render() {
 		return this.props.children
 	}
 
 	componentDidMount() {
-		let { data, hidden } = this.props
+    let {data, hidden} = this.props;
 
 		if ( !hidden ) this._dispatch('ADD_CRUMB', data)
 	}
 
 	componentWillReceiveProps(nextProps) {
-		let { data, hidden } = nextProps
+    let {data, hidden} = nextProps;
 
 		// Update the crumb if its data has changed
 		if ( !IsEqual(data, this.props.data) ) {
@@ -65,7 +64,7 @@ export default class Breadcrumb extends React.Component {
 	 * @param  {object} data   - The breadcrumb data to pass
 	 */
 	_dispatch(action, data) {
-		let { id } = this.state
+    let {id} = this.state;
 
 		Dispatch({
 			type: action,
