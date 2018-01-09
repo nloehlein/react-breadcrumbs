@@ -1,7 +1,7 @@
 {
-  "name": "react-breadcrumbs",
-  "version": "2.1.3",
-  "description": "Automatic breadcrumbs for react-router",
+  "name": "x-react-breadcrumbs",
+  "version": "2.1.4",
+  "description": "Fork of Automatic breadcrumbs for react-router",
   "author": "Sven Anders Robbestad <anders@robbestad.com>",
   "homepage": "https://github.com/svenanders/react-breadcrumbs",
   "license": "ISC",
@@ -20,10 +20,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/svenanders/react-breadcrumbs.git"
+    "url": "https://github.com/nloehlein/react-breadcrumbs.git"
   },
   "bugs": {
-    "url": "https://github.com/svenanders/react-breadcrumbs/issues"
+    "url": "https://github.com/nloehlein/react-breadcrumbs/issues"
   },
   "keywords": [
     "react-component",

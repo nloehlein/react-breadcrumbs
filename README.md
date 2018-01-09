@@ -1,4 +1,5 @@
 # React Breadcrumbs
+https://github.com/svenanders/react-breadcrumbs
 
 [React][1] component use to generate a breadcrumb trail (compatible with
 [React Router][2]).
